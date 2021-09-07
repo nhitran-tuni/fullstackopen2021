@@ -31,6 +31,13 @@ const App = () => {
       >
         next anecdote
       </button>
+      <h1 className="most-vote-anecdote">Anecdote with most vote</h1>
+      {Math.max(...points) > 0 &&
+        <>
+          <p>{anecdotes[points.indexOf(Math.max(...points))]}</p>
+          <p>has {Math.max(...points)} votes</p>
+        </>
+      }
     </div>
   )
 }
